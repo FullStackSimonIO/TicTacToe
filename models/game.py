@@ -31,7 +31,7 @@ class Game:
         return all([cell != ' ' for row in board for cell in row])
 
     def switch_player(self):
-        self.current__player = "O" if self.current_player == "X" else "X"
+        self.current_player = "O" if self.current_player == "X" else "X"
 
     def convert_to_json(self):
         return json.dumps({

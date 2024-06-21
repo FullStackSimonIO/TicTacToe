@@ -1,1 +1,0 @@
-{"board": "[[\"X\", \"X\", \"O\"], [\" \", \"O\", \" \"], [\" \", \" \", \" \"]]", "game": "{\"current_player\": \"X\"}", "human_player": {"symbol": "X"}, "computer_player": {"symbol": "O"}}

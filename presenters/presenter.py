@@ -17,7 +17,8 @@ class Presenter(PlayerVsPlayerPresenter, PlayerVsComputerPresenter):
             elif menu_input == 2:
                 self.play_pvc_game()
             elif menu_input == 3:
+                self.play_pvp_game()
                 self.game.load_from_json("game.json")
 
             elif menu_input == 4:
-                print("")
+                self.play_pvc_game()
