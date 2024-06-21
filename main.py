@@ -1,5 +1,17 @@
-from presenters.presenter import Presenter
+from presenters.pvp import PlayerVsPlayerPresenter
+from presenters.pvc import PlayerVsComputerPresenter
+from view.view import View
 
-game = Presenter()
+if __name__ == "__main__":
+    view = View()
+    pvp_presenter = PlayerVsPlayerPresenter()
+    pvc_presenter = PlayerVsComputerPresenter()
 
-game.play()
+    while True:
+
+        menu_input = view.print_menu()
+
+        if menu_input == 1:
+            pvp_presenter.play_pvp_game()
+        elif menu_input == 2:
+            pvc_presenter.play_pvc_game()

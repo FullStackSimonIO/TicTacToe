@@ -4,15 +4,24 @@ from models.game import Game
 class Player:
 
     def __init__(self, index, name, symbol):
-        self.game = Game()
+        self.index = index
         self.name = name
         self.symbol = symbol
-        self.index = index
 
-    def enter_move(self):
-        field = input(
-            f"{self.symbol}: Enter the field where you want to place your symbol...\n")
-        return field
+    def enter_move(self, board):
+        while True:
+            try:
+                cell = int(
+                    input("Enter the Field (1-9) where you want to place your Icon...\n"))
+                if cell < 1 or cell > 9:
+                    print("Enter a Number between 1-9!")
+
+                row, col = (cell - 1) // 3, (cell - 1) % 3
+                if board[row][col] in ["X", "O"]:
+                    print("Field already taken!")
+                return row, col
+            except ValueError:
+                print("Enter a valid field!")
 
 
 class HumanPlayer(Player):
@@ -36,10 +45,10 @@ class HumanPlayer(Player):
                 print("Enter a valid field!")
 
 
-class ComputerPlayer(Player):
+class ComputerPlayer:
 
-    def __init__(self, name, symbol):
-        super().__init__(name, symbol)
+    def __init__(self, symbol):
+        self.symbol = symbol
 
     def make_move(self, board):
         best_score = -1000
@@ -84,3 +93,23 @@ class ComputerPlayer(Player):
                         board[row][col] = " "
                         best_score = min(score, best_score)
             return best_score
+
+    def check_winner(self, board):
+        for row in board:
+            if row.count(row[0]) == 3 and row[0] != " ":
+                return 1 if row[0] == self.symbol else -1
+
+        for col in range(3):
+            if board[0][col] == board[1][col] == board[2][col] != " ":
+                return 1 if board[0][col] == self.symbol else -1
+
+        if board[0][0] == board[1][1] == board[2][2] != " ":
+            return 1 if board[0][0] == self.symbol else -1
+
+        if board[0][2] == board[1][1] == board[2][0] != " ":
+            return 1 if board[0][2] == self.symbol else -1
+
+        return 0
+
+    def check_is_full(self, board):
+        return all([cell != " " for row in board for cell in row])
