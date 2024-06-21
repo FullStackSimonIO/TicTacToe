@@ -83,3 +83,4 @@ class ComputerPlayer(Player):
                         score = self.minimax(board, depth + 1, True)
                         board[row][col] = " "
                         best_score = min(score, best_score)
+            return best_score

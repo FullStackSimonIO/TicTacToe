@@ -15,8 +15,7 @@ class Presenter(PlayerVsPlayerPresenter, PlayerVsComputerPresenter):
                 self.play_pvp_game()
 
             elif menu_input == 2:
-                print("PVC")
-
+                self.play_pvc_game()
             elif menu_input == 3:
                 print("")
 
