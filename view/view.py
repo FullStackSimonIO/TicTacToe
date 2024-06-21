@@ -16,9 +16,8 @@ class View:
         print("""
         1. Player vs Player
         2. Player vs Computer
-        3. Show Stats
-        4. Settings
-        5. Exit
+        3. Load Game
+        4. Exit
             """)
         while True:
             try:

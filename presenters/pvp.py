@@ -21,8 +21,10 @@ class PlayerVsPlayerPresenter:
             self.view.print_board(self.board.board)
             row, col = self.player_1.make_move(self.board.board)
             self.board.update_field(self.player_1.symbol, row, col)
+            test = self.board.convert_board_to_json()
             self.game.clear_terminal()
             self.view.print_board(self.board.board)
+            print(f"board: {test}")
 
             if self.game.check_if_winner(self.board.board, self.player_1.symbol):
                 print(f"{self.player_1.name} wins!")

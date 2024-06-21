@@ -1,8 +1,10 @@
+from models.board import Board
 import json
 
 
 class Game:
     def __init__(self):
+        self.board = Board()
         self.current_player = "X"
 
     def clear_terminal(self):
