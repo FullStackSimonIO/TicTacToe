@@ -73,3 +73,10 @@ class ComputerPlayer(Player):
                         board[row][col] = " "
                         best_score = max(score, best_score)
             return best_score
+        else:
+            best_score = 1000
+            human_player = "0" if self.symbol == "X" else "X"
+            for row in range(3):
+                for col in range(3):
+                    if board[row][col] == " ":
+                        board[row][col] == " "
