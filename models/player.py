@@ -79,4 +79,7 @@ class ComputerPlayer(Player):
             for row in range(3):
                 for col in range(3):
                     if board[row][col] == " ":
-                        board[row][col] == " "
+                        board[row][col] = human_player
+                        score = self.minimax(board, depth + 1, True)
+                        board[row][col] = " "
+                        best_score = min(score, best_score)
