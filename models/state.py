@@ -27,7 +27,7 @@ def load_game(filename, board, game, player_1, player_2):
         if not data:
             print(f"File {filename} is empty")
             return
-        game_data = json.loads(f)
+        game_data = json.loads(data)
     board.load_from_json(game_data['board'])
     game.load_from_json(game_data['game'])
     player_1.symbol = game_data['player_1']['symbol']
