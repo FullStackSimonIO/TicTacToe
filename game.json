@@ -1,1 +1,6 @@
-{"board": "[[\"X\", \"O\", \" \"], [\" \", \" \", \" \"], [\" \", \" \", \" \"]]", "game": "{\"current_player\": \"O\"}", "player_1": {"symbol": "X"}, "player_2": {"symbol": "O"}}
+{
+  "board": "[[\"X\", \"O\", \"X\"], [\"O\", \"X\", \"O\"], [\" \", \" \", \" \"]]",
+  "game": "{\"current_player\": \"O\"}",
+  "player_1": { "symbol": "X" },
+  "player_2": { "symbol": "O" }
+}
